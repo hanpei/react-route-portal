@@ -5,7 +5,6 @@ import { FloatingProxy } from '../components/FloatingProxy';
 export interface IItemProps {
   src: string;
   alt?: string;
-  setAttrs: React.Dispatch<React.SetStateAction<{}>>;
 }
 
 export function Item(props: IItemProps) {
@@ -16,6 +15,7 @@ export function Item(props: IItemProps) {
         back
       </button>
       <div className="flex p-10">
+        <FloatingProxy className="w-80 h-80 rounded-[50%]" />
         <div className="flex-1 text-gray-700 ml-6 text-lg">
           <p>
             Sunt est quidem. Natus molestias ab consectetur quasi et eos.
@@ -28,10 +28,6 @@ export function Item(props: IItemProps) {
             Facere exercitationem et fuga. Neque non illum.
           </p>
         </div>
-        <FloatingProxy
-          setAttrs={props.setAttrs}
-          className="w-80 h-80 rounded-[50%]"
-        />
       </div>
     </div>
   );

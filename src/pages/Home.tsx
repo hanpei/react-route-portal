@@ -4,10 +4,9 @@ import { FloatingProxy } from '../components/FloatingProxy';
 
 interface IItemProps {
   src: string;
-  setAttrs: React.Dispatch<React.SetStateAction<{}>>;
 }
 
-function Home({ src, setAttrs }: IItemProps) {
+function Home({ src }: IItemProps) {
   const nav = useNavigate();
 
   const id = getItemId(src);
@@ -17,7 +16,7 @@ function Home({ src, setAttrs }: IItemProps) {
         go
       </button>
       <div className="flex p-10 flex-row w-full gap-5">
-        <FloatingProxy setAttrs={setAttrs} className="rounded-md w-40 h-40" />
+        <FloatingProxy className="rounded-md w-40 h-40" />
       </div>
     </div>
   );
