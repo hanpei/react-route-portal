@@ -8,7 +8,7 @@ export interface IFloatingProps {
 
 export function Floating(props: IFloatingProps) {
   const ctx = useContext(FloatingContext);
-  console.log(ctx.props);
+
   const { cls, ...others } = ctx.props;
   return (
     <div

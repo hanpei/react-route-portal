@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 
 type Ctx = {
   props: Record<string, unknown>;
@@ -26,4 +27,30 @@ export function FloatingProvider({ children }: FloatingProviderProps) {
       {children}
     </FloatingContext.Provider>
   );
+}
+
+export interface IFloatingProps {
+  children: React.ReactNode;
+}
+
+export function withFloating(WrappedComponent: React.ComponentType<any>) {
+  return function Floating() {
+    const ctx = useContext(FloatingContext);
+
+    const { cls, ...others } = ctx.props;
+    return (
+      <div
+        style={{
+          ...others,
+          position: 'absolute',
+          overflow: 'hidden',
+          transition: 'all .5s ease',
+          transform: 'translateZ(0)',
+        }}
+        className={cls as string}
+      >
+        <WrappedComponent />
+      </div>
+    );
+  };
 }

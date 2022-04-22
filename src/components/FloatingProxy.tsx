@@ -4,10 +4,11 @@ import { FloatingContext } from '../context/FloatingProvider';
 
 export interface IFloatingProxyProps {
   className?: string;
+  children: React.ReactNode;
 }
 
 export function FloatingProxy(props: IFloatingProxyProps) {
-  const { className } = props;
+  const { className, children } = props;
   const ctx = useContext(FloatingContext);
   const update = ctx.setProps;
 
@@ -20,5 +21,9 @@ export function FloatingProxy(props: IFloatingProxyProps) {
     }
   }, [update, ref, className]);
 
-  return <div ref={ref} className={props.className}></div>;
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
 }

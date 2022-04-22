@@ -1,22 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FloatingProxy } from '../components/FloatingProxy';
+import { Image } from '../components/Image';
 
-interface IItemProps {
-  src: string;
-}
-
-function Home({ src }: IItemProps) {
+function Home() {
   const nav = useNavigate();
 
-  const id = getItemId(src);
   return (
     <div className="flex flex-col items-center gap-2 mt-8">
-      <button className="btn w-20" onClick={() => nav(id)}>
+      <button className="btn w-20" onClick={() => nav('item')}>
         go
       </button>
       <div className="flex p-10 flex-row w-full gap-5">
-        <FloatingProxy className="rounded-md w-40 h-40" />
+        <FloatingProxy className="rounded-md w-40 h-40 overflow-hidden">
+          <Image />
+        </FloatingProxy>
       </div>
     </div>
   );
@@ -24,6 +22,6 @@ function Home({ src }: IItemProps) {
 
 export default Home;
 
-function getItemId(src: string): string {
-  return src.split('/').pop()!.split('?')[0];
-}
+// function getItemId(src: string): string {
+//   return src.split('/').pop()!.split('?')[0];
+// }
