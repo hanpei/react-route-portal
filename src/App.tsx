@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { FloatingContainer } from '.';
 import './App.css';
-import { FloatingWithImage } from './components/Image';
 import Home from './pages/Home';
 import { Item } from './pages/Item';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/item" element={<Item />}></Route>
         </Routes>
       </div>
-      <FloatingWithImage />
+      <FloatingContainer />
     </>
   );
 }

@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { FloatingProvider } from './context/FloatingProvider';
+import { withFloating } from './common/createFloating';
+import { Image } from './components/Image';
+
+export const { FloatingContainer, FloatingProxy } = withFloating(Image);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

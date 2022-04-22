@@ -12,9 +12,7 @@ function Home() {
         go
       </button>
       <div className="flex p-10 flex-row w-full gap-5">
-        <FloatingProxy className="rounded-md w-40 h-40 overflow-hidden">
-          <Image />
-        </FloatingProxy>
+        <FloatingProxy className="rounded-md w-40 h-40 overflow-hidden"></FloatingProxy>
       </div>
     </div>
   );

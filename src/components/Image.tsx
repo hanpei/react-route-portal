@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { withFloating } from '../context/FloatingProvider';
 
 const src1 =
   'https://images.unsplash.com/photo-1649516702655-e4ea2a1ea09c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU1fHJuU0tESHd3WVVrfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
@@ -30,5 +29,3 @@ export function Image() {
     />
   );
 }
-
-export const FloatingWithImage = withFloating(Image);
