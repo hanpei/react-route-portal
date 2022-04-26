@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const src1 =
+const src =
   'https://images.unsplash.com/photo-1649516702655-e4ea2a1ea09c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU1fHJuU0tESHd3WVVrfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 
 const src2 =
@@ -12,20 +12,7 @@ export interface IImageProps {
 }
 
 export function Image() {
-  const [src, setSrc] = React.useState(src1);
-  const toggle = () => {
-    if (src === src1) {
-      setSrc(src2);
-    } else {
-      setSrc(src1);
-    }
-  };
   return (
-    <img
-      onClick={toggle}
-      src={src}
-      alt="img"
-      className="w-full h-full object-cover block"
-    />
+    <img src={src} alt="img" className="w-full h-full object-cover block" />
   );
 }

@@ -20,5 +20,5 @@ export function FloatingProxy(props: IFloatingProxyProps) {
     }
   }, [update, ref, className]);
 
-  return <div ref={ref} className={className}></div>;
+  return <div id="container" ref={ref} className={className}></div>;
 }

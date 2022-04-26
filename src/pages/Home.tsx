@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FloatingProxy } from '../components/FloatingProxy';
 import { Image } from '../components/Image';
 
